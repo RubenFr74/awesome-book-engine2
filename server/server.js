@@ -36,7 +36,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   db.once("open", () => {
     app.listen(process.env.PORT || 3000, function() {
-      console.log(`🌍 Now listening on localhost:${PORT}`)
+      console.log(`🌍 Now listening on localhost`, this.address().port, app.settings.env);
     });
   });
 };
